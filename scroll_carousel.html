@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Clean Image Carousel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="carousel-wrapper">
+        <button class="btn-prev" aria-label="Previous">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="carousel">
+            <div class="card"><img src="images/image1.png" alt="Full Image 1"></div>
+            <div class="card"><img src="images/image2.png" alt="Full Image 2"></div>
+            <div class="card"><img src="images/image3.png" alt="Full Image 3"></div>
+            <div class="card"><img src="images/image4.png" alt="Full Image 4"></div>
+            <div class="card"><img src="images/image5.png" alt="Full Image 5"></div>
+            <div class="card"><img src="images/image6.png" alt="Full Image 6"></div>
+            <div class="card"><img src="images/image7.png" alt="Full Image 7"></div>
+            <div class="card"><img src="images/image8.png" alt="Full Image 8"></div>
+            <div class="card"><img src="images/image9.png" alt="Full Image 9"></div>
+            <div class="card"><img src="images/image10.png" alt="Full Image 10"></div>
+        </div>
+
+        <button class="btn-next" aria-label="Next">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const btnPrev = document.querySelector('.btn-prev');
+        const btnNext = document.querySelector('.btn-next');
+
+        // Scroll by roughly one card width
+        const scrollAmount = carousel.offsetWidth * 0.8; // Dynamic – adjusts to screen size
+
+        btnPrev.addEventListener('click', () => {
+            carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        btnNext.addEventListener('click', () => {
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
